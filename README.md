@@ -4,7 +4,7 @@
 
 
 
-## Install EQUAL
+## Installation
 ```{r eval=FALSE}
 library("devtools")
 devtools::install_github("Ren-Mingyang/HeteroGGM")
