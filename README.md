@@ -38,7 +38,7 @@ vignettes in the package, which can be referred to after the installation.
 
 
 ## Toy example
-Call the built-in simulation data set ($K_0 = 3$), and set the upper bound of $K_0$ and the sequences of the tuning parameters ($\lambda1$, $\lambda2$, and $\lambda3$).
+Call the built-in simulation data set (K0 = 3), and set the upper bound of K0 and the sequences of the tuning parameters.
 ```{r eval=FALSE}
 data(example.data)
 K <- 6
