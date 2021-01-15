@@ -27,10 +27,14 @@ Mingyang Ren <renmingyang17@mails.ucas.ac.cn>
 
 
 ## Installation
+
+Method 1: Run the following codes directly in R.
 ```{r eval=FALSE}
 library("devtools")
 devtools::install_github("Ren-Mingyang/HeteroGGM")
 ```
+Method 2: Download the HeteroGGM_0.1.0.tar.gz, and install from Package Archive File using RStudio.
+
 
 ## Usage
 To make the package more user-friendly, there are detailed help documents and 
