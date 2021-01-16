@@ -24,7 +24,7 @@ Mingyang Ren, Sanguo Zhang, Qingzhao Zhang, Shuangge Ma. (2021). Gaussian Graphi
 
 ## Maintainer
 Mingyang Ren <renmingyang17@mails.ucas.ac.cn>
-
+Homepage: [https://ren-mingyang.github.io/]{https://ren-mingyang.github.io/}
 
 ## Installation
 
