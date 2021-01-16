@@ -23,8 +23,8 @@ Welcome any suggestions and comments on my first R package!
 Mingyang Ren, Sanguo Zhang, Qingzhao Zhang, Shuangge Ma. (2021). Gaussian Graphical Model-based Heterogeneity Analysis via Penalized Fusion. Biometrics, Accepted.
 
 ## Maintainer
-Mingyang Ren <renmingyang17@mails.ucas.ac.cn>
-Homepage: [https://ren-mingyang.github.io/]{https://ren-mingyang.github.io/}
+Mingyang Ren <renmingyang17@mails.ucas.ac.cn>  
+Homepage: [https://ren-mingyang.github.io/](https://ren-mingyang.github.io/)
 
 ## Installation
 
