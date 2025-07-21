@@ -13,6 +13,7 @@
 #' @import igraph
 #'
 #' @examples
+#' \donttest{
 #' data(example.data)
 #' K <- 6
 #' lambda <- genelambda.obo(nlambda1=5,lambda1_max=0.5,lambda1_min=0.1,
@@ -33,6 +34,7 @@
 #' va_names <- c("1","6")
 #' linked_node_names(summ, va_names, num_subgroup=1)
 #' plot_network(summ, num_subgroup = c(1:K_hat), plot.mfrow = c(1,K_hat))
+#' }
 #'
 summary_network <- function(opt_Mu_hat, opt_Theta_hat, data){
 

@@ -1,7 +1,7 @@
 #' Penalized GGM-based clustering.
 #'
 #' @author Mingyang Ren, Sanguo Zhang, Qingzhao Zhang, Shuangge Ma. Maintainer: Mingyang Ren <renmingyang17@mails.ucas.ac.cn>.
-#' @references Ren, M., Zhang S., Zhang Q. and Ma S. (2020). Gaussian Graphical Model-based Heterogeneity Analysis via Penalized Fusion. Biometrics, Published Online.
+#' @references Ren, M., Zhang S., Zhang Q. and Ma S. (2020). Gaussian Graphical Model-based Heterogeneity Analysis via Penalized Fusion. Biometrics, Published Online, https://doi.org/10.1111/biom.13426.
 #'             Zhou, H., Pan, W., & Shen, X. (2009). Penalized model-based clustering with unconstrained covariance matrices. Electronic journal of statistics, 3, 1473.
 #' @usage PGGMBC(lambda, data, K, initial.selection="K-means", initialize, average=F,
 #'               asymmetric=T, eps = 5e-2, maxiter=10,
@@ -24,10 +24,12 @@
 #'
 #' @return A list including all estimated parameters and the BIC values with all choices of given tuning parameters, and the selected optional parameters.
 #' @export
+#' @import huge
 #' @importFrom stats cov cutree dist hclust kmeans median
 #' @importFrom utils combn
 #'
 #' @examples
+#' \donttest{
 #' ######## Example 1: Generate simulation data and apply this method to analysis #######
 #' n <- 200              # The sample size of each subgroup
 #' p <- 20               # The dimension of the precision matrix
@@ -80,6 +82,7 @@
 #' Theta_hat.list <- res$Theta_hat.list
 #' opt_num <- res$Opt_num
 #' opt_Theta_hat <- Theta_hat.list[[opt_num]]
+#' }
 #'
 PGGMBC <- function(lambda, data, K, initial.selection="K-means",
                    initialize, average=F, asymmetric=T, eps = 5e-2, maxiter=10, maxiter.AMA=5,

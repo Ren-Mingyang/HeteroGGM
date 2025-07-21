@@ -1,7 +1,7 @@
 #' GGM-based heterogeneity analysis.
 #'
 #' @author Mingyang Ren, Sanguo Zhang, Qingzhao Zhang, Shuangge Ma. Maintainer: Mingyang Ren <renmingyang17@mails.ucas.ac.cn>.
-#' @references Ren, M., Zhang S., Zhang Q. and Ma S. (2020). Gaussian Graphical Model-based Heterogeneity Analysis via Penalized Fusion. Biometrics, Published Online.
+#' @references Ren, M., Zhang S., Zhang Q. and Ma S. (2022). Gaussian Graphical Model-based Heterogeneity Analysis via Penalized Fusion. Biometrics.
 #' @usage GGMPF(lambda, data, K, initial.selection="K-means", initialize, average=F,
 #'              asymmetric=T, eps = 5e-2, maxiter=10,
 #'              maxiter.AMA=5, local_appro=T, trace = F, penalty = "MCP", theta.fusion=T)
@@ -24,10 +24,12 @@
 #'
 #' @return A list including all estimated parameters and the BIC values with all choices of given tuning parameters, and the selected optional parameters.
 #' @export
+#' @import huge Matrix MASS
 #' @importFrom stats cov cutree dist hclust kmeans median
 #' @importFrom utils combn
 #'
 #' @examples
+#' \donttest{
 #' ######## Example 1: Generate simulation data and apply this method to analysis #######
 #' n <- 200              # The sample size of each subgroup
 #' p <- 20               # The dimension of the precision matrix
@@ -88,6 +90,7 @@
 #' opt_Theta_hat <- Theta_hat.list[[opt_num]]
 #' K_hat <- dim(opt_Theta_hat)[3]
 #' K_hat
+#' }
 #'
 GGMPF <- function(lambda, data, K, initial.selection="K-means",
                               initialize, average=F, asymmetric=T, eps = 5e-2, maxiter=10, maxiter.AMA=5,
@@ -230,6 +233,15 @@ GGMPF <- function(lambda, data, K, initial.selection="K-means",
   n_lam = which(aBIC == min(aBIC))[1]
   Opt_aBIC = min(aBIC)
   Opt_lambda = c(lam1,lam2,lam3)
-  result = list(Opt_lambda=Opt_lambda,Mu_hat.list=Mu_hat.list,Theta_hat.list=Theta_hat.list,prob.list=prob.list,member.list=member.list,L.mat.list=L.mat.list,Opt_aBIC=Opt_aBIC,BIC=aBIC,Opt_num=n_lam)
+
+  result = list(Opt_lambda=Opt_lambda,Mu_hat.list=Mu_hat.list,Theta_hat.list=Theta_hat.list,
+                prob.list=prob.list,member.list=member.list,L.mat.list=L.mat.list,
+                Opt_aBIC=Opt_aBIC,BIC=aBIC,Opt_num=n_lam,
+                opt_Theta_hat=Theta_hat.list[[n_lam]],
+                opt_Mu_hat = Mu_hat.list[[n_lam]],
+                opt_member = member.list[[n_lam]],
+                opt_L.mat = L.mat.list[[n_lam]],
+                opt_prob = prob.list[[n_lam]],
+                K_hat = dim(Theta_hat.list[[n_lam]])[3])
   return(result)
 }

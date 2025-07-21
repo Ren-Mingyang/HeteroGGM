@@ -19,9 +19,17 @@ initialize_fuc = function(data, K, n.start = 100){
   S <- array(0, dim = c(p, p, K))
   for(k in 1:K)
   {
-    Mu[k,] <- t(colMeans(data[memb == k, , drop = FALSE]) )
-    S[,,k]  <- cov(data[memb == k, , drop = FALSE])
-    Theta[,,k] <- solve(S[,,k])
+    data.k = data[memb == k, , drop = FALSE]
+    Mu[k,] <- t(colMeans(data.k) )
+    S[,,k]  <- cov(data.k)
+    n.k <- dim(data.k)[1]
+    p.k <- dim(data.k)[2]
+    if("matrix" %in% class(try(solve(S[,,k]),silent=TRUE))){
+      Theta[,,k] <- solve(S[,,k])
+    } else {
+      Theta[,,k] <- huge::huge(data.k, lambda = 0.5*sqrt(log(max(n.k,p.k))/n.k), method = "glasso", verbose = FALSE)$icov[[1]]
+    }
+
   }
 
   int.res <- list()

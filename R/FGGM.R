@@ -31,6 +31,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' n <- 200              # The sample size of each subgroup
 #' p <- 20               # The dimension of the precision matrix
 #' K0 <- 3               # The true number of subgroups
@@ -65,6 +66,7 @@
 #' group = PP$group; prob = PP$prob0; bic = PP$bic; member = PP$member
 #' K0_hat = as.numeric(dim(Theta_hat)[3])
 #' K0_hat
+#' }
 #'
 FGGM <- function(data, K, lambda1 = 0.5, lambda2 = 0.2, lambda3 = 2, a = 3, rho = 1,
                 eps = 5e-2, niter = 20, maxiter=10, maxiter.AMA=5, initialization=T, initialize,
@@ -242,8 +244,8 @@ FGGM <- function(data, K, lambda1 = 0.5, lambda2 = 0.2, lambda3 = 2, a = 3, rho 
   for (l in 1:K_0) {
     gg = group_final[[l]]
     prob0[l] = sum(prob[gg])
+    L.mat0[,l] = apply(as.matrix(L.mat[,gg]),1,sum)
     if(length(gg) > 1){
-      L.mat0[,l] = apply(L.mat[,gg],1,sum)
       mu_final[l,] = apply(mu[gg,],2,mean)
 
       if(!average){
@@ -258,7 +260,7 @@ FGGM <- function(data, K, lambda1 = 0.5, lambda2 = 0.2, lambda3 = 2, a = 3, rho 
         }
       }
 
-    }else{ mu_final[l,] = mu[gg,]; Theta_final[,,l] = Theta[,,gg]; Xi_final[,,l] = Xi[,,gg]; L.mat0 = matrix(1,n,K_0) }
+    }else{ mu_final[l,] = mu[gg,]; Theta_final[,,l] = Theta[,,gg]; Xi_final[,,l] = Xi[,,gg] }
   }
 
   if(asymmetric){
@@ -269,8 +271,8 @@ FGGM <- function(data, K, lambda1 = 0.5, lambda2 = 0.2, lambda3 = 2, a = 3, rho 
   }
 
   Theta_final[abs(Theta_final) < 1e-3] <- 0
-  member = apply(L.mat,1,function(a){which(a == max(a))[1]})
-  BIC.res = BIC(data, mu_final, Xi_final, L.mat)
+  member = apply(L.mat0,1,function(a){which(a == max(a))[1]})
+  BIC.res = BIC(data, mu_final, Xi_final, L.mat0)
 
   FGGM_res <- list();FGGM_res$mu <-  mu_final;FGGM_res$Theta <- Theta_final
   FGGM_res$Xi <- Xi_final; FGGM_res$niter <- t; FGGM_res$diff_Xi <- V_kk

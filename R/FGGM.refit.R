@@ -30,6 +30,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' n <- 200              # The sample size of each subgroup
 #' p <- 20               # The dimension of the precision matrix
 #' K0 <- 3               # The true number of subgroups
@@ -63,6 +64,7 @@
 #' group = PP$group; prob = PP$prob0; bic = PP$bic; member = PP$member
 #' K0_hat = as.numeric(dim(Theta_hat)[3])
 #' K0_hat
+#' }
 #'
 FGGM.refit = function(data, K, lambda1 = 0.5, lambda2 = 0.2, lambda3 = 2, a = 3, rho = 1,
                       eps = 5e-2, niter = 20, maxiter=10, maxiter.AMA=5, initialization=T, initialize,
@@ -123,7 +125,7 @@ FGGM.refit = function(data, K, lambda1 = 0.5, lambda2 = 0.2, lambda3 = 2, a = 3,
             initialization=initialization, initialize=initialize, average=average,
             asymmetric=asymmetric, local_appro=local_appro, penalty = penalty, theta.fusion=theta.fusion)
   K_hat = length(PP$group)
-  if(K_hat == 1){
+  if(K_hat == 1 | lambda3 == 0){
     return(PP)
   } else {
     set.seed(1)
