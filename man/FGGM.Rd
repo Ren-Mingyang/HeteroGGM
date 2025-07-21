@@ -53,6 +53,7 @@ A list including all estimated parameters and the BIC value.
 The base function of Gaussian graphical model-based heterogeneity analysis via penalized fusion: identifying the order of subgroups and reconstructing the network structure.
 }
 \examples{
+\donttest{
 n <- 200              # The sample size of each subgroup
 p <- 20               # The dimension of the precision matrix
 K0 <- 3               # The true number of subgroups
@@ -87,6 +88,7 @@ mu_hat=PP$mu; Theta_hat=PP$Xi; L.mat = PP$L.mat0
 group = PP$group; prob = PP$prob0; bic = PP$bic; member = PP$member
 K0_hat = as.numeric(dim(Theta_hat)[3])
 K0_hat
+}
 
 }
 \references{

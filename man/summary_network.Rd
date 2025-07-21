@@ -20,6 +20,7 @@ A list including the overlap of edges of different subgroups, the number of edge
 Summarize the characteristics of the resulting network structures.
 }
 \examples{
+\donttest{
 data(example.data)
 K <- 6
 lambda <- genelambda.obo(nlambda1=5,lambda1_max=0.5,lambda1_min=0.1,
@@ -40,5 +41,6 @@ summ$Theta_summary$overlap
 va_names <- c("1","6")
 linked_node_names(summ, va_names, num_subgroup=1)
 plot_network(summ, num_subgroup = c(1:K_hat), plot.mfrow = c(1,K_hat))
+}
 
 }

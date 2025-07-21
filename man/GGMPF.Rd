@@ -44,6 +44,7 @@ A list including all estimated parameters and the BIC values with all choices of
 The main function of Gaussian graphical model-based heterogeneity analysis via penalized fusion.
 }
 \examples{
+\donttest{
 ######## Example 1: Generate simulation data and apply this method to analysis #######
 n <- 200              # The sample size of each subgroup
 p <- 20               # The dimension of the precision matrix
@@ -104,10 +105,11 @@ opt_num <- res$Opt_num
 opt_Theta_hat <- Theta_hat.list[[opt_num]]
 K_hat <- dim(opt_Theta_hat)[3]
 K_hat
+}
 
 }
 \references{
-Ren, M., Zhang S., Zhang Q. and Ma S. (2020). Gaussian Graphical Model-based Heterogeneity Analysis via Penalized Fusion. Biometrics, Published Online.
+Ren, M., Zhang S., Zhang Q. and Ma S. (2022). Gaussian Graphical Model-based Heterogeneity Analysis via Penalized Fusion. Biometrics.
 }
 \author{
 Mingyang Ren, Sanguo Zhang, Qingzhao Zhang, Shuangge Ma. Maintainer: Mingyang Ren <renmingyang17@mails.ucas.ac.cn>.

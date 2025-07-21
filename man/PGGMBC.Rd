@@ -42,6 +42,7 @@ A list including all estimated parameters and the BIC values with all choices of
 The main function of penalized Gaussian graphical model-based clustering with unconstrained covariance matrices.
 }
 \examples{
+\donttest{
 ######## Example 1: Generate simulation data and apply this method to analysis #######
 n <- 200              # The sample size of each subgroup
 p <- 20               # The dimension of the precision matrix
@@ -94,10 +95,11 @@ res <- PGGMBC(lambda, example.data$data, K, initial.selection="K-means")
 Theta_hat.list <- res$Theta_hat.list
 opt_num <- res$Opt_num
 opt_Theta_hat <- Theta_hat.list[[opt_num]]
+}
 
 }
 \references{
-Ren, M., Zhang S., Zhang Q. and Ma S. (2020). Gaussian Graphical Model-based Heterogeneity Analysis via Penalized Fusion. Biometrics, Published Online.
+Ren, M., Zhang S., Zhang Q. and Ma S. (2020). Gaussian Graphical Model-based Heterogeneity Analysis via Penalized Fusion. Biometrics, Published Online, https://doi.org/10.1111/biom.13426.
             Zhou, H., Pan, W., & Shen, X. (2009). Penalized model-based clustering with unconstrained covariance matrices. Electronic journal of statistics, 3, 1473.
 }
 \author{

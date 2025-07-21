@@ -53,6 +53,7 @@ A list including all estimated parameters and the BIC value after refitting.
 Refitting when K0 is identified using FGGM().
 }
 \examples{
+\donttest{
 n <- 200              # The sample size of each subgroup
 p <- 20               # The dimension of the precision matrix
 K0 <- 3               # The true number of subgroups
@@ -86,6 +87,7 @@ mu_hat=PP$mu; Theta_hat=PP$Xi; L.mat = PP$L.mat0
 group = PP$group; prob = PP$prob0; bic = PP$bic; member = PP$member
 K0_hat = as.numeric(dim(Theta_hat)[3])
 K0_hat
+}
 
 }
 \references{
