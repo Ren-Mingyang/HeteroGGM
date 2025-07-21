@@ -1,20 +1,10 @@
 # HeteroGGM
 ## Introduction
 Gaussian graphical model-based heterogeneity analysis:
-Recently, several Gaussian graphical model (GGM)-based heterogeneity 
-analysis techniques have been developed. A common methodological limitation 
-is that the number of subgroups is assumed to be known a priori, which 
-is not realistic. 
+Recently, several Gaussian graphical model (GGM)-based heterogeneity analysis techniques have been developed. A common methodological limitation is that the number of subgroups is assumed to be known a priori, which is not realistic. 
 
-In a very recent study (Ren et al., 2021), a novel approach 
-based on the penalized fusion technique is developed to fully 
-data-dependently determine the number and structure of subgroups in 
-GGM-based heterogeneity analysis. It opens the door for utilizing 
-the GGM technique in more practical settings. The goal of this 
-package is to user-friendly realizing this approach. Beyond 
-Ren et al. (2021), more estimations and functions are added, so 
-that the package is self-contained and more comprehensive and can 
-provide ''more direct'' insights to practitioners (with the visualization function).
+In a recent study (Ren et al., 2021), a novel approach based on the penalized fusion technique is developed to fully data-dependently determine the number and structure of subgroups in GGM-based heterogeneity analysis. It opens the door for utilizing 
+the GGM technique in more practical settings. The goal of this package is to user-friendly realizing this approach. Beyond Ren et al. (2021), more estimations and functions are added, so that the package is self-contained and more comprehensive and can provide ''more direct'' insights to practitioners (with the visualization function).
 
 Welcome any suggestions and comments on my first R package!
 
@@ -32,7 +22,7 @@ Method 1: Run the following codes directly in R.
 library("devtools")
 devtools::install_github("Ren-Mingyang/HeteroGGM")
 ```
-Method 2: Download the HeteroGGM_0.1.0.tar.gz, and install from Package Archive File using RStudio.
+Method 2: Download the HeteroGGM_1.1.1.tar.gz, and install from Package Archive File using RStudio.
 
 
 ## Usage
