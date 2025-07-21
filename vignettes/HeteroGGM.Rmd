@@ -113,8 +113,7 @@ plot_network(summ, num_subgroup = c(1:K_hat), plot.mfrow=c(1,K_hat))
 
 ## References:
 
-* [Ren M., Zhang S., Zhang Q. and Ma S. (2021). Gaussian Graphical Model-based Heterogeneity Analysis via Penalized Fusion. *Biometrics*, Published Online.]
-
+* [Ren M., Zhang S., Zhang Q. and Ma S. (2021). Gaussian Graphical Model-based Heterogeneity Analysis via Penalized Fusion. *Biometrics*, Published Online.](https://doi.org/10.1111/biom.13426)
 
 # PGGMBC
 
@@ -155,7 +154,6 @@ The usages of summarizing the characteristics of the resulting network structure
 
 ## References:
 
-* [Zhou, H., Pan, W. and Shen, X. (2009). Penalized model-based clustering with unconstrained covariance matrices. *Electronic Journal of Statistics*, 3, 1473-1496.]
-(https://projecteuclid.org/euclid.ejs/1206123679/)
+* [Zhou, H., Pan, W. and Shen, X. (2009). Penalized model-based clustering with unconstrained covariance matrices. *Electronic Journal of Statistics*, 3, 1473-1496.](https://projecteuclid.org/euclid.ejs/1206123679/)
 
 
