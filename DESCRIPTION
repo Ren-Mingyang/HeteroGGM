@@ -1,33 +1,37 @@
 Package: HeteroGGM
 Type: Package
 Title: Gaussian Graphical Model-Based Heterogeneity Analysis
-Version: 0.1.0
-Date: 2021-1-28
-Author: Mingyang Ren, Sanguo Zhang, Qingzhao Zhang, Shuangge Ma
-Maintainer: Mingyang Ren <renmingyang17@mails.ucas.ac.cn>
+Version: 1.1.1
+Date: 2025-03
+Authors@R: 
+    c(person("Mingyang", "Ren", email = "renmingyang17@mails.ucas.ac.cn", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-8061-9940")),
+      person("Sanguo", "Zhang", role = c("aut")),
+      person("Qingzhao", "Zhang", role = c("aut")),
+      person("Shuangge", "Ma", role = c("aut")))
 Description: The goal of this package is to user-friendly realizing Gaussian 
              graphical model-based heterogeneity analysis.
              Recently, several Gaussian graphical model-based heterogeneity 
              analysis techniques have been developed. A common methodological limitation 
              is that the number of subgroups is assumed to be known a priori, which 
-             is not realistic. In a very recent study (Ren et al., 2021), a novel approach 
+             is not realistic. In a very recent study (Ren et al., 2022), a novel approach 
              based on the penalized fusion technique is developed to fully 
              data-dependently determine the number and structure of subgroups in 
              Gaussian graphical model-based heterogeneity analysis. It opens the door for utilizing 
              the Gaussian graphical model technique in more practical settings. Beyond 
-             Ren et al. (2021), more estimations and functions are added, so 
+             Ren et al. (2022), more estimations and functions are added, so 
              that the package is self-contained and more comprehensive and can 
              provide ``more direct'' insights to practitioners (with the 
              visualization function). Reference: 
-             Ren, M., Zhang S., Zhang Q. and Ma S. (2021). Gaussian Graphical 
+             Ren, M., Zhang S., Zhang Q. and Ma S. (2022). Gaussian Graphical 
              Model-based Heterogeneity Analysis via Penalized Fusion. 
-             Biometrics, <doi: 10.1111/biom.13426>.
+             Biometrics, 78 (2), 524-535.
 License: GPL-2
 Encoding: UTF-8
-Imports: igraph, Matrix, MASS
+Imports: igraph, Matrix, MASS, huge
 LazyData: true
 LazyLoad: yes
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.2
 Depends: 
     R (>= 3.4)
 Suggests: knitr, rmarkdown
